@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'stretch',
         backgroundColor: '#F5FCFF'
     },
     welcome: {
@@ -25,7 +25,7 @@ export default class Conversations extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ConversationsList></ConversationsList>
+                <ConversationsList />
             </View>
         );
     }
