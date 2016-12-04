@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ListView, StyleSheet, Text } from 'react-native';
-import ConversationsRow from '../ConversationsRow';
+import ConversationsRow from './ConversationsRow';
 
 const styles = StyleSheet.create({
     container: {
