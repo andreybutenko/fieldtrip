@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
+import AdvancedChat from '../components/AdvancedChat';
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1
+    },
+    chat: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'stretch',
-        backgroundColor: '#F5FCFF'
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5
+        marginBottom: 30
     }
 });
 
@@ -72,13 +64,18 @@ export default class ConversationHistory extends React.Component {
     }
     render() {
         return (
-            <GiftedChat
-                messages={this.state.messages}
-                onSend={this.onSend}
-                user={{
-                    _id: 1,
-                }}
-            />
+            <View style={styles.container}>
+                <View style={styles.chat}>
+                    <GiftedChat
+                        messages={this.state.messages}
+                        onSend={this.onSend}
+                        user={{
+                            _id: 1,
+                        }}
+                    />
+                </View>
+                <AdvancedChat />
+            </View>
         );
     }
 }
