@@ -31,19 +31,22 @@ class ConversationsList extends Component {
                     sub: 'Andrey Butenko',
                     date: '15 min',
                     text: 'Hello, World!',
-                    photo: images.profilePlaceholder
+                    photo: images.profilePlaceholder,
+                    id: 0
                 },
                 {
                     title: 'Andrey Butenko',
                     date: 'yesterday',
                     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia enim sed lorem porttitor tincidunt. Morbi sed diam quis ipsum bibendum congue vitae at ligula. Quisque in mauris pretium, laoreet elit a, commodo dolor. Cras iaculis arcu at libero consectetur, feugiat imperdiet urna facilisis. Sed eu porttitor augue, sed rutrum eros. Aliquam porttitor, magna vel egestas lobortis, leo enim vulputate nibh, sit amet elementum risus velit sed leo. Nullam id aliquam purus. Sed scelerisque porttitor ultrices. Curabitur nulla libero, tempus at efficitur id, venenatis ultrices diam. Maecenas quis pharetra velit, ut consectetur diam.',
-                    photo: images.profilePlaceholder
+                    photo: images.profilePlaceholder,
+                    id: 1
                 },
                 {
                     title: 'Andrey Butenko',
                     date: '11/14/16',
                     text: 'Hello, World!',
-                    photo: images.profilePlaceholder
+                    photo: images.profilePlaceholder,
+                    id: 2
                 }
             ])
         };
