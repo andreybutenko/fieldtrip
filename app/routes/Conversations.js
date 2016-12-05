@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import configStyles from '../config/configStyles';
 import ConversationsList from '../components/ConversationsList';
 
 const styles = StyleSheet.create({
@@ -25,7 +26,9 @@ export default class Conversations extends Component {
     render() {
         return (
             <View style={styles.container}>
+            <View  style={configStyles.sceneWrapper}>
                 <ConversationsList />
+                </View>
             </View>
         );
     }

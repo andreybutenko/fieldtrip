@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, ListView, StyleSheet, Text } from 'react-native';
 import images from '../config/images';
-import configStyles from '../config/configStyles';
 import ConversationsRow from './ConversationsRow';
 
 const styles = StyleSheet.create({
@@ -54,7 +53,7 @@ class ConversationsList extends Component {
     render() {
         return (
             <ListView
-                style={[styles.container, configStyles.sceneWrapper]}
+                style={styles.container}
                 contentContainerStyle={styles.contentcontainer}
                 dataSource={this.state.dataSource}
                 renderRow={(data) => <ConversationsRow {...data} />}

@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
+import configStyles from '../config/configStyles';
 import AdvancedChat from '../components/AdvancedChat';
+import ChatBubble from '../components/ChatBubble';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1
     },
     chat: {
-        flex: 1,
-        marginBottom: 30
+        flex: 1
     }
 });
 
 export default class ConversationHistory extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {messages: []};
+        this.state = { messages: [], advancedChatHeight: 30 };
         this.onSend = this.onSend.bind(this);
     }
     componentWillMount() {
@@ -62,19 +63,20 @@ export default class ConversationHistory extends React.Component {
             };
         });
     }
+    onAdvancedChatUpdate(height) {
+        console.log(height)
+        this.setState({ advancedChatHeight: height });
+    }
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.chat}>
-                    <GiftedChat
-                        messages={this.state.messages}
-                        onSend={this.onSend}
-                        user={{
-                            _id: 1,
-                        }}
+            <View style={[styles.container, configStyles.sceneWrapper]}>
+                <View style={[styles.chat, {marginBottom: this.state.advancedChatHeight }]}>
+                    <ChatBubble
+                        fromMe={true}
+                        text={'Hello!'}
                     />
                 </View>
-                <AdvancedChat />
+                <AdvancedChat resizeCallback={(height) => this.onAdvancedChatUpdate(height)} />
             </View>
         );
     }

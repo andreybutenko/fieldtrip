@@ -20,13 +20,16 @@ const styles = StyleSheet.create({
 });
 
 class AdvancedChat extends Component {
+    changeSection() {
+        this.props.resizeCallback(50);
+    }
     render() {
         return (
             <View style={styles.container}>
-                <Icon style={styles.icon} name="comment" />
-                <Icon style={styles.icon} name="add-a-photo" />
-                <Icon style={styles.icon} name="add-location" />
-                <Icon style={styles.icon} name="beenhere" />
+                <Icon style={styles.icon} onPress={() => this.changeSection()} name="comment" />
+                <Icon style={styles.icon} onPress={() => this.changeSection()} name="add-a-photo" />
+                <Icon style={styles.icon} onPress={() => this.changeSection()} name="add-location" />
+                <Icon style={styles.icon} onPress={() => this.changeSection()} name="beenhere" />
             </View>
         );
     }
