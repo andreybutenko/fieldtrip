@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import configStyles from '../config/configStyles';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import ConversationsList from '../components/ConversationsList';
 
 const styles = StyleSheet.create({
@@ -8,17 +7,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'stretch',
-        backgroundColor: '#F5FCFF'
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5
+        backgroundColor: '#F5FCFF',
+        ...Platform.select({
+            ios: {
+                marginTop: 44
+            },
+            android: {
+                marginTop: 34
+            }
+        })
     }
 });
 
@@ -26,9 +23,7 @@ export default class Conversations extends Component {
     render() {
         return (
             <View style={styles.container}>
-            <View  style={configStyles.sceneWrapper}>
                 <ConversationsList />
-                </View>
             </View>
         );
     }

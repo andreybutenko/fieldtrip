@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, StyleSheet, Image } from 'react-native';
+import { Dimensions, View, Text, TouchableHighlight, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import renderIf from '../lib/renderIf';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        margin: 8,
+        marginBottom: 0,
         flexDirection: 'column'
+    },
+    label: {
+        marginBottom: 2
+    },
+    bubble: {
+        padding: 8,
+        borderRadius: 8
     }
 });
 
 class ChatBubble extends Component {
-    openConversationHistory(id) {
-        Actions.conversationHistory({ id: id });
-    }
     render() {
         return (
-            <View style={[styles.container, { alignSelf: this.props.fromMe ? 'flex-end' : 'flex-start' }]}>
-                <Text>HEYEO{ this.props.text }</Text>
+            <View style={[
+                styles.container, {
+                    alignSelf: this.props.fromMe ? 'flex-end' : 'flex-start',
+                    maxWidth: 0.8 * Dimensions.get('window').width
+                }]
+            }>
+                {renderIf(!this.props.fromMe)(
+                    <Text style={styles.label}>{ this.props.sender }</Text>
+                )}
+                <View style={[styles.bubble, { backgroundColor: this.props.fromMe ? '#eeeeee' : '#81cfe0' }]}>
+                    <Text>{ this.props.text }</Text>
+                </View>
             </View>
         );
     }

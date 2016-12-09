@@ -72,7 +72,13 @@ export default class ConversationHistory extends React.Component {
             <View style={[styles.container, configStyles.sceneWrapper]}>
                 <View style={[styles.chat, {marginBottom: this.state.advancedChatHeight }]}>
                     <ChatBubble
+                        fromMe={false}
+                        sender={'Andrey Butenko'}
+                        text={'Diam veri has ne, te eum iusto persecuti, vivendo partiendo ne usu. Ex per modus graece, duo omnesque accusamus imperdiet no. An vel alia choro, et accusamus contentiones mei, duo ne omnes oratio pericula. Deleniti nominati vix cu. An sea percipit mnesarchum dissentiunt, velit simul indoctum ei ius, id diceret eleifend qui. Ne nam omnis vidisse delicata.'}
+                    />
+                    <ChatBubble
                         fromMe={true}
+                        sender={'Andrey Butenko'}
                         text={'Hello!'}
                     />
                 </View>
