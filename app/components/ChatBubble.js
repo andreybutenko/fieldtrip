@@ -15,6 +15,9 @@ const styles = StyleSheet.create({
     bubble: {
         padding: 8,
         borderRadius: 8
+    },
+    bubbleText: {
+        
     }
 });
 
@@ -31,7 +34,7 @@ class ChatBubble extends Component {
                     <Text style={styles.label}>{ this.props.sender }</Text>
                 )}
                 <View style={[styles.bubble, { backgroundColor: this.props.fromMe ? '#eeeeee' : '#81cfe0' }]}>
-                    <Text>{ this.props.text }</Text>
+                    <Text style={styles.bubbleText}>{ this.props.text }</Text>
                 </View>
             </View>
         );
