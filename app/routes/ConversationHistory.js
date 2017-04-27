@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MapView from 'react-native-maps';
 import { TextInput, StyleSheet, Text, View, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import configStyles from '../config/configStyles';
@@ -46,11 +47,11 @@ export default class ConversationHistory extends Component {
                     text: 'Diam veri has ne, te eum iusto persecuti, vivendo partiendo ne usu.'
                 },
                 {
-                    sender: 'Barack Obama',
+                    sender: 'John Doe',
                     text: 'Ex per modus graece, duo omnesque accusamus imperdiet no. An vel alia choro, et accusamus contentiones mei, duo ne omnes oratio pericula. Deleniti nominati vix cu. An sea percipit mnesarchum dissentiunt, velit simul indoctum ei ius, id diceret eleifend qui. Ne nam omnis vidisse delicata.'
                 },
                 {
-                    sender: 'Barack Obama',
+                    sender: 'John Doe',
                     text: 'An vel alia choro, et accusamus contentiones mei, duo ne omnes oratio pericula. Deleniti nominati vix cu. An sea percipit mnesarchum dissentiunt, velit simul indoctum ei ius, id diceret eleifend qui. Ne nam omnis vidisse delicata.'
                 },
                 {
@@ -137,6 +138,15 @@ export default class ConversationHistory extends Component {
                             type: 'text',
                             content: this.state.typing
                         })} />
+                </View>
+                <View style={styles.locationView}>
+
+                    <MapView
+                        style={styles.mapView}
+                        showsUserLocation={true}
+                        showsMyLocationButton={true}
+                        showsPointsOfInterest={false}
+                        />
                 </View>
             </View>
         );
